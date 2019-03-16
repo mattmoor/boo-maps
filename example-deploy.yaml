@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - name: example
+        image: ubuntu
+        command: ["/bin/bash"]
+        args: ["-c", "sleep 30000"]
+        env:
+        - name: BLAH
+          valueFrom:
+            configMapKeyRef:
+              name: "foo"
+              key: "foo"

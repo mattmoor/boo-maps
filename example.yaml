@@ -1,0 +1,6 @@
+apiVersion: boos.mattmoor.io/v1alpha1
+kind: MutableMap
+metadata:
+  name: foo
+spec:
+  foo: bar
