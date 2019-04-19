@@ -14,11 +14,11 @@ spec:
     spec:
       containers:
       - name: example
-        image: ubuntu
-        command: ["/bin/bash"]
-        args: ["-c", "sleep 30000"]
+        image: github.com/mattmoor/boo-maps/cmd/sample
+        ports:
+        - containerPort: 8080
         env:
-        - name: BLAH
+        - name: FOO
           valueFrom:
             configMapKeyRef:
               name: "foo"

@@ -1,0 +1,17 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: kexample
+spec:
+  template:
+    spec:
+      containers:
+      - image: github.com/mattmoor/boo-maps/cmd/sample
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FOO
+          valueFrom:
+            configMapKeyRef:
+              name: "foo"
+              key: "foo"

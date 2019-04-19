@@ -18,3 +18,7 @@ rules:
   - apiGroups: ["boos.mattmoor.io"]
     resources: ["mutablemaps", "immutablemaps"]
     verbs: ["get", "list", "create", "update", "delete", "patch", "watch"]
+
+  - apiGroups: ["serving.knative.dev"]
+    resources: ["services", "configurations"]
+    verbs: ["get", "list", "create", "update", "delete", "patch", "watch"]

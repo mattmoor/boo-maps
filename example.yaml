@@ -3,4 +3,4 @@ kind: MutableMap
 metadata:
   name: foo
 spec:
-  foo: bar
+  foo: foo

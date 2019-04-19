@@ -124,6 +124,11 @@ func main() {
 			appsv1.SchemeGroupVersion.WithKind("StatefulSet"):    &v1alpha1.WithPod{},
 			appsv1.SchemeGroupVersion.WithKind("DaemonSet"):      &v1alpha1.WithPod{},
 			batchv1.SchemeGroupVersion.WithKind("Job"):           &v1alpha1.WithPod{},
+			schema.GroupVersionKind{
+				Group:   "serving.knative.dev",
+				Version: "v1alpha1",
+				Kind:    "Service",
+			}: &v1alpha1.WithPod{},
 		},
 		Logger: logger,
 	}
